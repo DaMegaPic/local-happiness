@@ -29,29 +29,29 @@ function App() {
       <main>
         <div id="flex-nodes">
           <div className="node">
-            <img src="/images/butlerhouse.jpg" alt="Recent Project" />
+            <img src="./images/butlerhouse.jpg" alt="Recent Project" />
             <h2>Our most recent project!</h2>
           </div>
           <div className="node">
-            <img src="/images/gutted.jpg" alt="Rebuilding Interior" />
+            <img src="./images/gutted.jpg" alt="Rebuilding Interior" />
             <h2>We've been fully rebuilding the inside!</h2>
           </div>
           <div className="node">
-            <img src="/images/door.jpg" alt="New Doors" />
+            <img src="./images/door.jpg" alt="New Doors" />
             <h2>Added some new doors!</h2>
           </div>
         </div>
         <div id="flex-nodes">
           <div className="node">
-            <img src="/images/noroof.jpg" alt="Tree Removed from Roof" />
+            <img src="./images/noroof.jpg" alt="Tree Removed from Roof" />
             <h2>We removed a tree from the roof</h2>
           </div>
           <div className="node">
-            <img src="/images/plywoodroof.jpg" alt="Roof Rebuild" />
+            <img src="./images/plywoodroof.jpg" alt="Roof Rebuild" />
             <h2>Roof Rebuild</h2>
           </div>
           <div className="node">
-            <img src="/images/tarproof.jpg" alt="Roof Completion" />
+            <img src="./images/tarproof.jpg" alt="Roof Completion" />
             <h2>It's come a long way!</h2>
           </div>
         </div>
