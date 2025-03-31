@@ -3,7 +3,7 @@ import './styles.css';
 
 function Kitchens() {
   return (
-    <div className="Kitchens">
+    <div className="kitchens">
       <header>
         <div id="flex-header">
           <img id="header-logo" src="/images/logo.jpg" alt="Logo" />

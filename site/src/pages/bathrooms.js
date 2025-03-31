@@ -3,7 +3,7 @@ import './styles.css';
 
 function Bathroom() {
   return (
-    <div className="bathroom">
+    <div className="bathrooms">
       <header>
         <div id="flex-header">
           <img id="header-logo" src="/images/logo.jpg" alt="Logo" />
