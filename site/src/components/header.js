@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <div id="flex-header">
-        <img id="header-logo" src="/images/logo.jpg" alt="Logo" />
+        <img id="header-logo" src={`${process.env.PUBLIC_URL}/images/logo.jpg`} alt="Logo" />
         <h1 id="centered">Local Happiness Construction</h1>
       </div>
       <hr />
