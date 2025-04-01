@@ -1,61 +1,60 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import About from './pages/about';
+import Kitchens from './pages/kitchens';
+import Bathrooms from './pages/bathrooms';
+import Landscaping from './pages/landscaping';
+import ReviewBoard from './pages/reviews';
 import './App.css';
+import Header from './components/header';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <div id="flex-header">
-          <img id="header-logo" src="/images/logo.jpg" alt="Logo" />
-          <h1 id="centered">Local Happiness Construction</h1>
-        </div>
-        <hr />
-        <nav id="main-nav">
-          <div id="toggle-nav">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <ul id="nav-items" className="hide-small">
-            <li className="highlight-nav"><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/kitchens">Kitchens</a></li>
-            <li><a href="/bathrooms">Bathrooms</a></li>
-            <li><a href="/landscaping">Landscaping</a></li>
-            <li><a href="/reviews">Review Board</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <div id="flex-nodes">
-          <div className="node">
-            <img src="./images/butlerhouse.jpg" alt="Recent Project" />
-            <h2>Our most recent project!</h2>
-          </div>
-          <div className="node">
-            <img src="./images/gutted.jpg" alt="Rebuilding Interior" />
-            <h2>We've been fully rebuilding the inside!</h2>
-          </div>
-          <div className="node">
-            <img src="./images/door.jpg" alt="New Doors" />
-            <h2>Added some new doors!</h2>
-          </div>
-        </div>
-        <div id="flex-nodes">
-          <div className="node">
-            <img src="./images/noroof.jpg" alt="Tree Removed from Roof" />
-            <h2>We removed a tree from the roof</h2>
-          </div>
-          <div className="node">
-            <img src="./images/plywoodroof.jpg" alt="Roof Rebuild" />
-            <h2>Roof Rebuild</h2>
-          </div>
-          <div className="node">
-            <img src="./images/tarproof.jpg" alt="Roof Completion" />
-            <h2>It's come a long way!</h2>
-          </div>
-        </div>
-      </main>
+    <Router>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/kitchens" element={<Kitchens />} />
+            <Route path="/bathrooms" element={<Bathrooms />} />
+            <Route path="/landscaping" element={<Landscaping />} />
+            <Route path="/reviews" element={<ReviewBoard />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+    <div id="flex-nodes">
+      <div className="node">
+        <img src="/images/butlerhouse.jpg" alt="Recent Project" />
+        <h2>Our most recent project!</h2>
+      </div>
+      <div className="node">
+        <img src="/images/gutted.jpg" alt="Rebuilding Interior" />
+        <h2>We've been fully rebuilding the inside!</h2>
+      </div>
+      <div className="node">
+        <img src="/images/door.jpg" alt="New Doors" />
+        <h2>Added some new doors!</h2>
+      </div>
+      <div className="node">
+        <img src="/images/noroof.jpg" alt="Tree Removed from Roof" />
+        <h2>We removed a tree from the roof</h2>
+      </div>
+      <div className="node">
+        <img src="/images/plywoodroof.jpg" alt="Roof Rebuild" />
+        <h2>Roof Rebuild</h2>
+      </div>
+      <div className="node">
+        <img src="/images/tarproof.jpg" alt="Roof Completion" />
+        <h2>It's come a long way!</h2>
+      </div>
     </div>
   );
 }

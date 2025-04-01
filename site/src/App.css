@@ -92,14 +92,16 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:50px;
-  padding-top:10px;
-  padding-bottom:10px;
+  gap:20px;
+  padding:20px;
+  flex-wrap:wrap;
 }
 #flex-nodes:not(:first-child) {
   padding-top:50px;
 }
 .node {
+  flex:1 1 300px;
+  max-width: 440px;
   text-align: center;
 }
 .node img {
