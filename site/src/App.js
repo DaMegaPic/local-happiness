@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/about';
 import Kitchens from './pages/kitchens';
 import Bathrooms from './pages/bathrooms';
@@ -29,30 +29,32 @@ function App() {
 }
 
 function Home() {
+  const baseUrl = process.env.PUBLIC_URL; // Get base URL for GitHub Pages
+
   return (
     <div id="flex-nodes">
       <div className="node">
-        <img src="https://damegapic.github.io/your-repo-name/images/butlerhouse.jpg" alt="Recent Project" />
+        <img src={`${baseUrl}/images/butlerhouse.jpg`} alt="Recent Project" />
         <h2>Our most recent project!</h2>
       </div>
       <div className="node">
-        <img src="https://damegapic.github.io/your-repo-name/images/gutted.jpg" alt="Rebuilding Interior" />
+        <img src={`${baseUrl}/images/gutted.jpg`} alt="Rebuilding Interior" />
         <h2>We've been fully rebuilding the inside!</h2>
       </div>
       <div className="node">
-        <img src="https://damegapic.github.io/your-repo-name/images/door.jpg" alt="New Doors" />
+        <img src={`${baseUrl}/images/door.jpg`} alt="New Doors" />
         <h2>Added some new doors!</h2>
       </div>
       <div className="node">
-        <img src="https://damegapic.github.io/your-repo-name/images/noroof.jpg" alt="Tree Removed from Roof" />
+        <img src={`${baseUrl}/images/noroof.jpg`} alt="Tree Removed from Roof" />
         <h2>We removed a tree from the roof</h2>
       </div>
       <div className="node">
-        <img src="https://damegapic.github.io/your-repo-name/images/plywoodroof.jpg" alt="Roof Rebuild" />
+        <img src={`${baseUrl}/images/plywoodroof.jpg`} alt="Roof Rebuild" />
         <h2>Roof Rebuild</h2>
       </div>
       <div className="node">
-        <img src="https://damegapic.github.io/your-repo-name/images/tarproof.jpg" alt="Roof Completion" />
+        <img src={`${baseUrl}/images/tarproof.jpg`} alt="Roof Completion" />
         <h2>It's come a long way!</h2>
       </div>
     </div>
