@@ -6,7 +6,7 @@ function Kitchens() {
     <div className="kitchens">
       <main>
         <div id="gallery-wrapper">
-          <img id="big-img-1" src="/images/kitchen1angle1.jpg" alt="Kitchen Before and After" />
+          <img id="big-img-1" src={`${process.env.PUBLIC_URL}/images/kitchen1angle1.jpg`} alt="Kitchen Before and After" />
           <div id="node-wrapper">
             <h2>Before and After</h2>
             <div id="flex-nodes">

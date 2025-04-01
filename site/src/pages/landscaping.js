@@ -6,7 +6,7 @@ function Landscaping() {
     <div className="landscaping">
       <main>
         <div id="gallery-wrapper">
-          <img id="big-img-1" src="/images/landscaping-big.jpg" alt="Landscaping Before and After" />
+          <img id="big-img-1" src={`${process.env.PUBLIC_URL}/images/landscaping-big.jpg`} alt="Landscaping Before and After" />
           <div id="node-wrapper">
             <h2>Before and After</h2>
             <div id="flex-nodes">

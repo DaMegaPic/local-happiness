@@ -21,7 +21,7 @@ function Bathroom() {
               </div>
             ))}
           </div>
-          <img id="big-img" src="/images/bigbathroom.jpg" alt="Big Bathroom" />
+          <img id="big-img" src={`${process.env.PUBLIC_URL}/images/bigbathroom.jpg`} alt="Big Bathroom" />
         </div>
       </main>
     </div>
