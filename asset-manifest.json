@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/local-happiness/static/css/main.d5bbe8cc.css",
+    "main.js": "/local-happiness/static/js/main.28768185.js",
+    "index.html": "/local-happiness/index.html",
+    "main.d5bbe8cc.css.map": "/local-happiness/static/css/main.d5bbe8cc.css.map",
+    "main.28768185.js.map": "/local-happiness/static/js/main.28768185.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5bbe8cc.css",
+    "static/js/main.28768185.js"
+  ]
+}
