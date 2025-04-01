@@ -48,7 +48,7 @@ function Home() {
         <h2>We removed a tree from the roof</h2>
       </div>
       <div className="node">
-        <img src="/images/plywoodroof.jpg" alt="Roof Rebuild" />
+        <img src={`${process.env.PUBLIC_URL}/images/plywoodroof.jpg`} alt="Roof Rebuild" />
         <h2>Roof Rebuild</h2>
       </div>
       <div className="node">
