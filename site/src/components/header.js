@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
-  const location = useLocation(); // Get the current URL
+  const location = useLocation();
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavVisible(prev => !prev);
+    console.log("Toggle Button Clicked");
+  };
 
   return (
     <header>
@@ -12,13 +18,13 @@ const Header = () => {
       </div>
       <hr />
       <nav id="main-nav">
-        <div id="toggle-nav">
+        <div id="toggle-nav" onClick={toggleNav}>
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <ul id="nav-items" className="hide-small">
-          {[
+        <ul id="nav-items" className={isNavVisible ? "" : "hide-small"}>
+          {[ 
             { path: "/", label: "Home" },
             { path: "/about", label: "About Us" },
             { path: "/kitchens", label: "Kitchens" },
