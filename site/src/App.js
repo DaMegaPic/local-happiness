@@ -29,7 +29,7 @@ function App() {
 }
 
 function Home() {
-  const baseUrl = process.env.PUBLIC_URL; // Get base URL for GitHub Pages
+  const baseUrl = process.env.PUBLIC_URL; // Get base URL for GitHub Pages :)
 
   return (
     <div id="flex-nodes">
