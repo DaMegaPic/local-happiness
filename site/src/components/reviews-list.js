@@ -5,7 +5,7 @@ function ReviewsList() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/reviews")
+    fetch("https://local-happiness-server.onrender.com/api/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((err) => console.error("Failed to fetch reviews:", err));
