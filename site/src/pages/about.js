@@ -116,7 +116,7 @@ function About() {
                         </div>
                         <div className="inputs">
                             <h4>Picture:</h4>
-                            <button type="button">Choose File</button> {/* File handling would require more setup */}
+                            <button type="button">Choose File</button> {/* File handling Code */}
                         </div>
                         <button type="submit">Submit</button>
                     </form>
