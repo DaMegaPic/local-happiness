@@ -210,6 +210,17 @@ button:hover {
     background-color: #a0c4ff;
 }
 
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+  
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+  
+
 /* Gallery Stuff */
 #gallery-wrapper {
     display:flex;
