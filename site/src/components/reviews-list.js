@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../pages/styles.css';
 
-function ReviewsList() {
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    fetch("https://local-happiness-server.onrender.com/api/reviews")
-      .then((res) => res.json())
-      .then((data) => setReviews(data))
-      .catch((err) => console.error("Failed to fetch reviews:", err));
-  }, []);
-
+function ReviewsList({ reviews }) {
   return (
     <div id="reviews-container">
       <div id="reviews">

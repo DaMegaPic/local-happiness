@@ -1,4 +1,4 @@
-  import React, { use, useState } from 'react';
+  import React, { use, useEffect, useState } from 'react';
   import './styles.css';
   import ReviewsList from '../components/reviews-list';
 
@@ -12,6 +12,14 @@
     const [errorMessage, setErrorMessage] = useState('');
     const [rating, setRating] = useState('');
     const [reviewer, setReviewer] = useState('');
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+      fetch("https://local-happiness-server.onrender.com/api/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.error("Failed to fetch reviews:", err));
+    }, []);
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -70,6 +78,7 @@
 
         const result = await response.json();
         setSuccessMessage("Review added successfully!");
+        setReviews((prev) => [...prev, result]);
 
         setTitle('');
         setRating('');
@@ -86,7 +95,7 @@
       <div className="reviews">
         <main>
           <div id="reviews-container">
-            <ReviewsList /> 
+            <ReviewsList reviews={reviews} /> 
             <div id="review-creator">
               <div id="request-block">
                 <h3>Write a Review!</h3>
