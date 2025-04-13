@@ -137,12 +137,15 @@ h3{
 #reviews-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
     height: calc(100vh - 200px);
     overflow: hidden;
 }
 
 #reviews {
     flex: 2;
+    margin-right:2;
     overflow-y: auto;
     padding: 20px;
     background-color: #565967;
@@ -165,6 +168,12 @@ h3{
     padding: 20px;
     background-color: #444857;
     border-radius: 10px;
+}
+
+header,
+#reviews-container {
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 #request-block {
@@ -324,7 +333,21 @@ p, h2, h3, h4, h5 {
 }
 
 @media only screen and (max-width: 767px) {
+    #reviews-container {
+        flex-direction: column;
+        height: calc(100vh - 200px);
+    }
+
+    #reviews,
     #review-creator {
+        width:100%;
+        overflow-y: auto;
+    }
+    #reviews {
+        flex:2;
+    }
+    #review-creator {
+        flex:1;
         padding: 10px;
         margin-top: 10px;
     }
