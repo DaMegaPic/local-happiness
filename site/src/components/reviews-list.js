@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../pages/styles.css';
 
-function ReviewsList({ reviews }) {
+function ReviewsList({ reviews, onEdit, onDelete }) {
   return (
     <div id="reviews-container">
       <div id="reviews">
@@ -12,10 +12,14 @@ function ReviewsList({ reviews }) {
               <span>{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span>
             </div>
             <img src={review.image} alt="Review Visual" />
-            <p>{review.content}</p>
+            <p>{review.content || review.description}</p>
             <div className="review-details">
               <span>{review.date}</span>
               <span> - {review.reviewer}</span>
+            </div>
+            <div className="review-actions">
+              <button onClick={() => onEdit(review)}>Edit</button>
+              <button onClick={() => onDelete(review._id)}>Delete</button>
             </div>
           </div>
         ))}

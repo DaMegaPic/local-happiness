@@ -13,6 +13,33 @@
     const [rating, setRating] = useState('');
     const [reviewer, setReviewer] = useState('');
     const [reviews, setReviews] = useState([]);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editingId, setEditingId] = useState(null);
+
+    const handleEditClick = (review) => {
+      setTitle(review.title);
+      setCode(review.code);
+      setDescription(review.description || review.content);
+      setRating(review.rating);
+      setReviewer(review.reviewer);
+      setEditingId(review._id);
+      setIsEditing(true);
+    };
+
+    const handleDelete = async (id) => {
+      try {
+        const res = await fetch(`https://local-happiness-server.onrender.com/api/reviews/${id}`, {
+          method: 'DELETE'
+        });
+    
+        if (!res.ok) throw new Error("Failed to delete review");
+    
+        setReviews(prev => prev.filter(r => r._id !== id));
+        setSuccessMessage("Review deleted!");
+      } catch (err) {
+        setErrorMessage(err.message || "Delete failed.");
+      }
+    };
 
     useEffect(() => {
       fetch("https://local-happiness-server.onrender.com/api/reviews")
@@ -54,7 +81,7 @@
         return;
       }
 
-      const newReview = {
+      const reviewData = {
         title,
         rating,
         code,
@@ -64,30 +91,50 @@
       };
 
       try {
-        const response = await fetch("https://local-happiness-server.onrender.com/api/reviews", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(newReview)
-        });
+        let response;
+        if (isEditing) {
+          response = await fetch(`https://local-happiness-server.onrender.com/api/reviews/${editingId}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(reviewData)
+          });
 
-        if (!response.ok) {
-          throw new Error("Failed to submit review");
-        }
+          if (!response.ok) throw new Error("Failed to update review");
 
-        const result = await response.json();
-        setSuccessMessage("Review added successfully!");
-        setReviews((prev) => [...prev, result]);
+          const updated = await response.json();
+          setReviews(prev =>
+            prev.map(r => (r._id === editingId ? updated : r))
+          );
+          setSuccessMessage("Review updated successfully!");
+        } else {
+          response = await fetch("https://local-happiness-server.onrender.com/api/reviews", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(reviewData)
+          });
 
-        setTitle('');
-        setRating('');
-        setCode('');
-        setDescription('');
-        setReviewer('');
-        setImage(null);
+          if (!response.ok) throw new Error("Failed to submit review");
+
+          const newReview = await response.json();
+          setReviews(prev => [...prev, newReview]);
+          setSuccessMessage("Review added successfully!");
+        };
+        
+      // Reset form
+      setTitle('');
+      setRating('');
+      setCode('');
+      setDescription('');
+      setReviewer('');
+      setImage(null);
+      setIsEditing(false);
+      setEditingId(null);
       } catch (err) {
-        setErrorMessage(err.message || "An error occured while submitting.");
+      setErrorMessage(err.message || "Something went wrong.");
       }
     };
 
@@ -95,7 +142,11 @@
       <div className="reviews">
         <main>
           <div id="reviews-container">
-            <ReviewsList reviews={reviews} /> 
+            <ReviewsList 
+            reviews={reviews}
+            onEdit={handleEditClick}
+            onDelete={handleDelete}
+            /> 
             <div id="review-creator">
               <div id="request-block">
                 <h3>Write a Review!</h3>
