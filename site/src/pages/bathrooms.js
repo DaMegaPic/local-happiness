@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import InstagramEmbed from '../components/InstagramEmbed';
 
 function Bathroom() {
   return (
@@ -8,18 +9,21 @@ function Bathroom() {
         <div id="gallery-wrapper">
           <div id="node-wrapper">
             <h2>Before and After</h2>
-            {[...Array(3)].map((_, i) => (
-              <div key={i} id="flex-nodes">
+              <div id="flex-nodes">
                 <div className="node">
-                  <img src="https://placehold.co/440x220" alt="Example" />
-                  <h2>This is an Example Header</h2>
+                  <InstagramEmbed url="https://www.instagram.com/p/CvSC7tnOgUG/?utm_source=ig_embed&amp;igsh=MzRlODBiNWFlZA==" />
                 </div>
                 <div className="node">
-                  <img src="https://placehold.co/440x220" alt="Example" />
-                  <h2>This is an Example Header</h2>
+                  <InstagramEmbed url="https://www.instagram.com/reel/Cgebj_OA-vZ/?utm_source=ig_embed&amp;utm_campaign=loading" />
+                </div>
+                <div className="node">
+                  <InstagramEmbed url="https://www.instagram.com/reel/DCIFFbERANx/?utm_source=ig_embed&amp;utm_campaign=loading" /> 
+                  <h2>Video</h2>
+                </div>
+                <div className="node">
+                  <InstagramEmbed url="https://www.instagram.com/p/CtmaIxwRn58/?utm_source=ig_embed&amp;utm_campaign=loading" />
                 </div>
               </div>
-            ))}
           </div>
           <img id="big-img" src={`${process.env.PUBLIC_URL}/images/bigbathroom.jpg`} alt="Big Bathroom" />
         </div>
