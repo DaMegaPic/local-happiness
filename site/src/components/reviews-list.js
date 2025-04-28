@@ -28,3 +28,5 @@ function ReviewsList({ reviews, onEdit, onDelete }) {
     </div>
   );
 }
+
+export default ReviewsList;
