@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import '../pages/styles.css';
-
 function ReviewsList({ reviews, onEdit, onDelete }) {
+  if (!Array.isArray(reviews)) {
+    return <div>Loading reviews...</div>;
+  }
+
   return (
     <div id="reviews-container">
       <div id="reviews">
@@ -27,5 +28,3 @@ function ReviewsList({ reviews, onEdit, onDelete }) {
     </div>
   );
 }
-
-export default ReviewsList;
