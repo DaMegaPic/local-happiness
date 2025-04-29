@@ -60,23 +60,13 @@ function About() {
             <main id="about-main">
                 <div id="about-block">
                     <div id="top-chunk">
-                        <p>This area is a placeholder for a brief description of the business and the morals it follows...</p>
+                        <p>The Local Happiness experience is truly exceptional. Most of our clients become repeat customers because we consistently show up, deliver great work, and exceed expectations. They often express their appreciation with messages like Kirby and Llewellyn Shealy, who said: "Thanks so much for everything Ken. We're thrilled with our new deck."</p>
+                        <p>Hi Ken. Thanks for the references, you have some very happy clients. Don’t want to bother you on a weekend, just letting you know we’ve decided to go ahead with the project. I’ve made selections at both The  Tile Center & Gateway & will go back to pay for those after speaking with you next week just to make sure I’ve gotten what I’m supposed to. Also want to discuss the curb of the shower with you at that time. </p>
                         <img src={`${process.env.PUBLIC_URL}/images/logo.jpg`} alt="Company Logo"/>
                     </div>
                     <div id="bottom-chunk">
                         <img style={{ width: '150px', height: '200px' }} src={`${process.env.PUBLIC_URL}/images/dadheadshot.jpg`} alt="Founder"/>
                         <h4>Founder/Owner: Ken Carey</h4>
-                        <p>Email: ken@localhappiness.net</p>
-                    </div>
-                    <div id="bottom-chunk">
-                        <img style={{ width: '150px', height: '200px' }} src={`${process.env.PUBLIC_URL}/images/Profile_Bilbo_Baggins.webp`} alt="Subcontractor"/>
-                        <h4>Subcontractor</h4>
-                        <p>Email: bilbobaggins@theshire.com</p>
-                    </div>
-                    <div id="bottom-chunk">
-                        <img style={{ width: '150px', height: '200px' }} src={`${process.env.PUBLIC_URL}/images/sauron.jfif`} alt="Subcontractor"/>
-                        <h4>Subcontractor</h4>
-                        <p>Email: thedarklord@mtdoom.com</p>
                     </div>
                 </div>
                 <div id="request-block">

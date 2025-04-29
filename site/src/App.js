@@ -32,31 +32,30 @@ function Home() {
   const baseUrl = process.env.PUBLIC_URL; // Get base URL for GitHub Pages :)
 
   return (
-    <div id="flex-nodes">
-      <div className="node">
-        <img src={`${baseUrl}/images/butlerhouse.jpg`} alt="Recent Project" />
-        <h2>Our most recent project!</h2>
+    <div id="wrapper">
+      <div id="flex-nodes">
+        <div className="node">
+          <img src={`${baseUrl}/images/naturaldeckshot.jpg`} alt="A natural scene with a deck we built" />
+          <h2>A new deck</h2>
+        </div>
+        <div className="node">
+          <img src={`${baseUrl}/images/secondangledeck.jpg`} alt="Deck second angle" />
+          <h2>Privacy wall on deck</h2>
+        </div>
+        <div className="node">
+          <img src={`${baseUrl}/images/bathroom++.jpg`} alt="New Bathroom" />
+          <h2>A new bathroom</h2>
+        </div>
+        <div className="node">
+          <img src={`${baseUrl}/images/niceshed.JPEG`} alt="New Shed" />
+          <h2>A new farm shed</h2>
+        </div>
+        <div className="node">
+          <img src={`${baseUrl}/images/sculpture.jpg`} alt="Sculpture" />
+          <h2>New aluminum base</h2>
+        </div>
       </div>
-      <div className="node">
-        <img src={`${baseUrl}/images/gutted.jpg`} alt="Rebuilding Interior" />
-        <h2>We've been fully rebuilding the inside!</h2>
-      </div>
-      <div className="node">
-        <img src={`${baseUrl}/images/door.jpg`} alt="New Doors" />
-        <h2>Added some new doors!</h2>
-      </div>
-      <div className="node">
-        <img src={`${baseUrl}/images/noroof.jpg`} alt="Tree Removed from Roof" />
-        <h2>We removed a tree from the roof</h2>
-      </div>
-      <div className="node">
-        <img src={`${baseUrl}/images/plywoodroof.jpg`} alt="Roof Rebuild" />
-        <h2>Roof Rebuild</h2>
-      </div>
-      <div className="node">
-        <img src={`${baseUrl}/images/tarproof.jpg`} alt="Roof Completion" />
-        <h2>It's come a long way!</h2>
-      </div>
+      <img src={`${baseUrl}/images/newbuild.jpg`} alt="New Build" />
     </div>
   );
 }

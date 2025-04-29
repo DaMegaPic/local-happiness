@@ -101,12 +101,21 @@ hr {
 }
 .node {
   flex:1 1 300px;
-  max-width: 440px;
+  max-width: 500px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 360px;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .node img {
-  width: 440px;
-  height:220px;
+  max-width:100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 h2 {
   color:white;
